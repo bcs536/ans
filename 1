@@ -1,0 +1,27 @@
+import pandas as pd
+
+# Create dictionary
+mobiles = {
+    "Mobile": ["Samsung", "iPhone", "Redmi", "OnePlus"],
+    "Price": [20000, 80000, 15000, 40000]
+}
+
+# Create DataFrame
+df = pd.DataFrame(mobiles)
+
+# Display DataFrame
+print(df)
+
+import os
+
+# List files
+files = os.listdir()
+
+# Count .py files
+py_files = [f for f in files if f.endswith(".py")]
+print("Total .py files:", len(py_files))
+
+# Display content of one file
+if py_files:
+    with open(py_files[0], "r") as f:
+        print(f.read())
