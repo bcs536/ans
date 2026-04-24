@@ -1,0 +1,26 @@
+import time
+
+# Get current time in seconds
+current_seconds = time.time()
+
+# a) Convert to struct_time (UTC)
+utc_time = time.gmtime(current_seconds)
+print("UTC struct_time:", utc_time)
+
+# b) Convert struct_time to formatted string
+formatted_time = time.strftime("%d-%m-%Y %H:%M:%S", utc_time)
+print("Formatted Time:", formatted_time)
+
+
+
+import re
+
+url = input("Enter URL: ")
+
+# Simple URL pattern
+pattern = r'^https?://(www\.)?[a-zA-Z0-9\-]+\.[a-zA-Z]{2,}'
+
+if re.match(pattern, url):
+    print("Valid URL")
+else:
+    print("Invalid URL")
