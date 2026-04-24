@@ -1,0 +1,48 @@
+s = input("Enter string: ")
+
+vowels = consonants = special = 0
+
+for ch in s:
+    if ch.isalpha():
+        if ch.lower() in "aeiou":
+            vowels += 1
+        else:
+            consonants += 1
+    else:
+        special += 1
+
+print("Vowels:", vowels)
+print("Consonants:", consonants)
+print("Special symbols:", special)
+
+import pandas as pd
+import numpy as np
+
+data = {
+    "Player": ["Hardik Pandya", "K L Rahul", "Andre Russel", "Jasprit Bumrah", "Virat Kohli", "Rohit Sharma"],
+    "Team": ["Mumbai Indians", "Kings Eleven", "Kolkata Knight Riders", "Mumbai Indians", "RCB", "Mumbai Indians"],
+    "Category": ["Batsman", "Batsman", "Batsman", "Bowler", "Batsman", "Batsman"],
+    "BidPrice": [13, 12, None, 10, 17, None],
+    "Runs": [1000, 2400, 900, 200, 3600, 3700]
+}
+
+df = pd.DataFrame(data)
+
+# a) First 2 rows
+print(df.head(2))
+
+# b) Last 3 rows
+print(df.tail(3))
+
+# c) Check null values
+print(df.isnull())
+
+# d) Replace null with mean
+df["BidPrice"].fillna(df["BidPrice"].mean(), inplace=True)
+print(df)
+
+# e) Most expensive player
+print(df.loc[df["BidPrice"].idxmax()])
+
+# f) Players per team
+print(df["Team"].value_counts())
