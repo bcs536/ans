@@ -1,0 +1,38 @@
+import re
+
+# Accept string
+s = input("Enter a string: ")
+
+# Extract numbers
+numbers = re.findall(r'\d+', s)
+
+# Display result
+print("Extracted numbers:", numbers)
+
+
+
+# Function to check pass/fail
+def check_pass_fail(marks):
+    return "Pass" if marks >= 40 else "Fail"
+
+# Input number of students
+n = int(input("Enter number of students: "))
+
+pass_count = 0
+fail_count = 0
+
+# Accept marks and display result
+for i in range(n):
+    marks = int(input(f"Enter marks of student {i+1}: "))
+    result = check_pass_fail(marks)
+
+    print(f"Student {i+1}:", result)
+
+    if result == "Pass":
+        pass_count += 1
+    else:
+        fail_count += 1
+
+# Display totals
+print("\nTotal Passed:", pass_count)
+print("Total Failed:", fail_count)
