@@ -1,0 +1,17 @@
+s = input("Enter string: ")
+print(s.replace('a', '*'))
+
+
+import time
+
+print("Local:", time.localtime())
+print("UTC:", time.gmtime())
+
+print("ctime:", time.ctime())
+print("gmtime:", time.asctime(time.gmtime()))
+
+dt = input("Enter date-time: ")
+parsed = time.strptime(dt, "%d-%m-%Y %H:%M:%S")
+
+print(time.strftime("%Y/%m/%d", parsed))
+print(time.strftime("%A %d %B %Y", parsed))
