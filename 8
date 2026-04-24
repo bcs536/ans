@@ -1,0 +1,32 @@
+# Function to calculate area
+def area_circle(radius):
+    area = 3.14 * radius * radius
+    return area
+
+# Accept input
+r = float(input("Enter radius: "))
+
+# Call function
+result = area_circle(r)
+
+# Display result
+print("Area of circle =", result)
+
+
+
+import random
+
+# Create list, string, tuple
+my_list = [10, 20, 30, 40, 50]
+my_string = "PYTHON"
+my_tuple = (1, 2, 3, 4, 5)
+
+# Random unique elements
+print("Random elements from list:")
+print(random.sample(my_list, 3))
+
+print("Random elements from string:")
+print(random.sample(my_string, 3))
+
+print("Random elements from tuple:")
+print(random.sample(my_tuple, 3))
