@@ -1,0 +1,35 @@
+try:
+    m = int(input("Enter value of m: "))
+    n = int(input("Enter value of n: "))
+
+    result = m / n
+    print("Result =", result)
+
+except ZeroDivisionError:
+    print("Error: Cannot divide by zero!")
+
+
+    import pandas as pd
+
+# Student 1 DataFrame
+student1 = pd.DataFrame({
+    "ID": ["S1", "S2", "S3", "S4", "S5"],
+    "Name": ["Anita", "Sakshi", "Om", "Raj", "Kanika"],
+    "Age": [18, 23, 20, 21, 20]
+})
+
+# Student 2 DataFrame
+student2 = pd.DataFrame({
+    "ID": ["S1", "S2", "S3", "S4", "S5"],
+    "Marks": [85, 90, 78, 88, 76]
+})
+
+# Display both DataFrames
+print("Student 1:\n", student1)
+print("\nStudent 2:\n", student2)
+
+# Merge DataFrames
+student3 = pd.merge(student1, student2, on="ID")
+
+# Display merged DataFrame
+print("\nMerged DataFrame (Student 3):\n", student3)
