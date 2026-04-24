@@ -1,0 +1,19 @@
+s = input("Enter string: ")
+print("Modified:", s.replace(" ", ""))
+
+
+import pandas as pd
+
+df = pd.DataFrame({
+    "Item": ["Pencil","Pencil","Pen","Pen","Eraser"],
+    "Company": ["Apsara","Natraj","Cello","Parkar","Apsara"],
+    "Count": [15,20,25,35,20],
+    "Price": [250,200,600,900,300]
+})
+
+print(df[df["Item"]=="Pencil"])
+df.loc[df["Item"]=="Eraser","Count"] = 25
+print(df[["Company","Price"]])
+print(df[df["Item"].isin(["Pencil","Pen"])])
+df["Colour"] = "Blue"
+print(df)
