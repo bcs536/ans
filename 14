@@ -1,0 +1,31 @@
+import re
+
+# Accept input
+string = input("Enter main string: ")
+substring = input("Enter substring: ")
+
+# Check if substring is at beginning
+pattern = "^" + substring
+
+if re.match(pattern, string):
+    print("Substring is present at the beginning.")
+else:
+    print("Substring is NOT present at the beginning.")
+
+
+    filename = input("Enter file name: ")
+position = int(input("Enter byte position: "))
+
+try:
+    with open(filename, "r") as f:
+        # Move pointer to given position
+        f.seek(position)
+
+        # Read from that position till end
+        content = f.read()
+
+        print("File content from position", position, ":\n")
+        print(content)
+
+except FileNotFoundError:
+    print("Error: File does not exist!")
