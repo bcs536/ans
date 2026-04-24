@@ -1,0 +1,27 @@
+# Function definition
+def productInfo(name, price=100):
+    if price < 100:
+        print("Product Name:", name)
+    else:
+        print("Price is not less than Rs.100")
+
+# Function calls
+productInfo("Pen", 50)
+productInfo("Book")   # default price = 100
+
+
+# Accept string
+s = input("Enter a string: ")
+
+# Split words
+words = s.split()
+
+# Filter words without vowels
+result = [w for w in words if not any(ch.lower() in "aeiou" for ch in w)]
+
+# Sort words
+result.sort()
+
+# Display results
+print("Words without vowels:", result)
+print("Count:", len(result))
