@@ -1,0 +1,12 @@
+import random
+
+# Create sequence types
+my_list = [10, 20, 30, 40, 50]
+my_string = "PYTHON"
+my_tuple = (1, 2, 3, 4, 5)
+
+# Unique random elements
+print("From list:", random.sample(my_list, 3))
+print("From string:", random.sample(my_string, 3))
+print("From tuple:", random.sample(my_tuple, 3))
+
