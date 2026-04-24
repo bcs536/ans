@@ -1,0 +1,46 @@
+import pandas as pd
+
+# List of 10 integers
+numbers = [10, 20, 30, 40, 50, 20, 30, 60, 70, 80]
+
+# Create DataFrame
+df = pd.DataFrame(numbers, columns=["Values"])
+
+# Display DataFrame
+print("DataFrame:\n", df)
+
+# Calculations
+print("Sum:", df["Values"].sum())
+print("Mean:", df["Values"].mean())
+print("Median:", df["Values"].median())
+print("Mode:\n", df["Values"].mode())
+print("Standard Deviation:", df["Values"].std())
+
+
+
+class FactorialSeries:
+    def __init__(self, n):
+        self.n = n
+        self.i = 1
+
+    def __iter__(self):
+        return self
+
+    def __next__(self):
+        if self.i > self.n:
+            raise StopIteration
+
+        fact = 1
+        for j in range(1, self.i + 1):
+            fact *= j
+
+        self.i += 1
+        return fact
+
+# Input
+n = int(input("Enter value of n: "))
+
+# Iterator usage
+print("Factorial Series:")
+for value in FactorialSeries(n):
+    print(value, end=" ")
