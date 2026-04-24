@@ -1,0 +1,42 @@
+import pandas as pd
+
+# Create dictionary
+data = {
+    "Subject_Name": ["Maths", "Physics", "Chemistry", "Biology", "English",
+                     "History", "Geography", "Computer", "Economics", "Hindi"],
+    "Marks": [85, 90, 78, 88, 76, 82, 79, 95, 80, 84]
+}
+
+# Create DataFrame
+df = pd.DataFrame(data)
+
+# Display first 5 rows
+print("First 5 rows:\n", df.head())
+
+# Display last 5 rows
+print("\nLast 5 rows:\n", df.tail())
+
+
+filename = input("Enter file name: ")
+
+try:
+    with open(filename, "r") as f:
+        content = f.read()
+
+        print("\nFile Content:\n", content)
+
+        # Count characters
+        char_count = len(content)
+
+        # Count words
+        word_count = len(content.split())
+
+        # Count lines
+        line_count = content.count('\n') + 1
+
+        print("\nCharacters:", char_count)
+        print("Words:", word_count)
+        print("Lines:", line_count)
+
+except FileNotFoundError:
+    print("Error: File does not exist!")
