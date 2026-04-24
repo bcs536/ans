@@ -1,0 +1,40 @@
+import random
+
+# Create list
+elements = [10, 20, 30, 40, 50]
+
+print("Original List:", elements)
+
+# Shuffle list
+random.shuffle(elements)
+
+print("Shuffled List:", elements)
+
+import pandas as pd
+
+# Create DataFrame
+data = pd.DataFrame({
+    "Label": ["Pencil", "Pencil", "Pen", "Pen", "Eraser"],
+    "Company": ["Apsara", "Natraj", "Cello", "Parkar", "Apsara"],
+    "Count": [15, 20, 25, 35, 20],
+    "Price": [250, 200, 600, 900, 300]
+})
+
+print("Original DataFrame:\n", data)
+
+# a) Rows with label "Pencil"
+print("\nPencil rows:\n", data[data["Label"] == "Pencil"])
+
+# b) Change Eraser count to 25
+data.loc[data["Label"] == "Eraser", "Count"] = 25
+print("\nAfter updating Eraser count:\n", data)
+
+# c) Only Company and Price columns
+print("\nCompany and Price:\n", data[["Company", "Price"]])
+
+# d) Rows with labels Pencil and Pen
+print("\nPencil and Pen rows:\n", data[data["Label"].isin(["Pencil", "Pen"])])
+
+# e) Rename column Count to Quantity
+data.rename(columns={"Count": "Quantity"}, inplace=True)
+print("\nAfter renaming column:\n", data)
