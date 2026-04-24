@@ -1,0 +1,51 @@
+import random
+
+# Create deck of cards
+suits = ['Hearts', 'Diamonds', 'Clubs', 'Spades']
+ranks = ['2', '3', '4', '5', '6', '7', '8', '9', '10',
+         'Jack', 'Queen', 'King', 'Ace']
+
+deck = [(rank, suit) for suit in suits for rank in ranks]
+
+# Shuffle deck
+random.shuffle(deck)
+
+# Display 5 cards (attempts)
+print("5 Cards drawn:")
+for i in range(5):
+    print(deck[i])
+
+
+
+
+    import pandas as pd
+import numpy as np
+
+# Create DataFrame
+df = pd.DataFrame({
+    "Player": ["Hardik Pandya", "K L Rahul", "Andre Russel", "Jasprit Bumrah", "Virat Kohli", "Rohit Sharma"],
+    "Team": ["Mumbai Indians", "Kings Eleven", "Kolkata Knight Riders", "Mumbai Indians", "RCB", "Mumbai Indians"],
+    "Category": ["Batsman", "Batsman", "Batsman", "Bowler", "Batsman", "Batsman"],
+    "BidPrice": [np.nan, 12, 7, 10, np.nan, 15],
+    "Runs": [1000, 2400, 900, np.nan, 3600, 3700]
+})
+
+print("Original DataFrame:\n", df)
+
+# a) First 2 rows
+print("\nFirst 2 rows:\n", df.head(2))
+
+# b) Last 3 rows
+print("\nLast 3 rows:\n", df.tail(3))
+
+# c) Check null values
+print("\nNull values:\n", df.isnull())
+
+# d) Replace null with mean
+df["BidPrice"].fillna(df["BidPrice"].mean(), inplace=True)
+df["Runs"].fillna(df["Runs"].mean(), inplace=True)
+
+print("\nAfter replacing null values:\n", df)
+
+# e) Most expensive player
+print("\nMost expensive player:\n", df.loc[df["BidPrice"].idxmax()])
