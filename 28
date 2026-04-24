@@ -1,0 +1,9 @@
+import re
+
+word = input("Enter word: ")
+pattern = r'^[cm](at|ot|ut|et|ud)$'
+
+print("Valid" if re.match(pattern, word) else "Invalid")
+
+
+
