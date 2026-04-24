@@ -1,0 +1,27 @@
+s = input("Enter a string: ")
+
+# Split into words
+words = s.split()
+
+# Check words without vowels
+result = []
+
+for word in words:
+    if not any(ch.lower() in "aeiou" for ch in word):
+        result.append(word)
+
+# Display result
+print("Words without vowels:", result)
+
+# Accept values
+m = int(input("Enter m: "))
+n = int(input("Enter n: "))
+
+# Condition m < n
+if m >= n:
+    print("m should be less than n")
+else:
+    primes = [num for num in range(m, n+1)
+              if num > 1 and all(num % i != 0 for i in range(2, num))]
+
+    print("Prime numbers:", primes)
