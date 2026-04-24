@@ -1,0 +1,6 @@
+import re
+
+num = input("Enter number: ")
+pattern = r'^(0|91)?[6-9][0-9]{9}$'
+
+print("Valid" if re.match(pattern, num) else "Invalid")
