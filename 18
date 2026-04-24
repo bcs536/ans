@@ -1,0 +1,25 @@
+import os
+
+# Get current directory path
+path = "."
+
+# List all files and folders
+items = os.listdir(path)
+
+print("Files and Folders in current directory:")
+for item in items:
+    print(item)
+
+
+    import re
+
+mobile = input("Enter mobile number: ")
+
+# Pattern:
+# (0 or 91 optional) + first digit 6-9 + remaining 9 digits
+pattern = r'^(0|91)?[6-9][0-9]{9}$'
+
+if re.match(pattern, mobile):
+    print("Valid Mobile Number")
+else:
+    print("Invalid Mobile Number")
