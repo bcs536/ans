@@ -1,0 +1,40 @@
+import time
+
+# Get current time in seconds
+current_seconds = time.time()
+
+# a) Convert seconds to readable string
+readable_time = time.ctime(current_seconds)
+print("Readable Time:", readable_time)
+
+# b) Convert seconds to struct_time (UTC)
+utc_time = time.gmtime(current_seconds)
+print("UTC struct_time:", utc_time)
+
+
+
+import pandas as pd
+
+# Student 1 DataFrame
+student1 = pd.DataFrame({
+    "ID": ["S1", "S2", "S3", "S4", "S5"],
+    "Name": ["Anita", "Sakshi", "Om", "Raj", "Kanika"],
+    "Age": [18, 23, 20, 21, 20]
+})
+
+# Student 2 DataFrame
+student2 = pd.DataFrame({
+    "ID": ["S2", "S4", "S5", "S6", "S7"],
+    "City": ["Pune", "Nashik", "Mumbai", "Delhi", "Nanded"],
+    "Marks": [97, 78, 86, 66, 54]
+})
+
+# Display DataFrames
+print("Student 1:\n", student1)
+print("\nStudent 2:\n", student2)
+
+# Join DataFrames (inner join)
+student3 = pd.merge(student1, student2, on="ID")
+
+# Display result
+print("\nJoined DataFrame (Student 3):\n", student3)
