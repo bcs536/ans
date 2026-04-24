@@ -1,0 +1,44 @@
+import re
+
+# Accept string
+s = input("Enter a string: ")
+
+# Remove special characters (keep letters and spaces)
+clean = re.sub(r'[^A-Za-z ]', '', s)
+
+# Extract words starting with capital letter
+words = clean.split()
+capital_words = [w for w in words if w[0].isupper()]
+
+# Display results
+print("Words starting with capital letter:", capital_words)
+print("Modified string:", clean)
+
+
+
+
+source = input("Enter source file name: ")
+target = input("Enter target file name: ")
+
+try:
+    with open(source, "r") as f1:
+        content = f1.read()
+
+    # Copy content
+    with open(target, "w") as f2:
+        f2.write(content)
+
+    print("File copied successfully!")
+
+    # Display new file content
+    with open(target, "r") as f:
+        data = f.read()
+        print("\nNew File Content:\n", data)
+
+        # Count
+        print("Lines:", data.count('\n') + 1)
+        print("Words:", len(data.split()))
+        print("Characters:", len(data))
+
+except FileNotFoundError:
+    print("Error: Source file does not exist!")
