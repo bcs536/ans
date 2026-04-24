@@ -1,0 +1,26 @@
+# Create list of 10 integers
+numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+
+# Use lambda with map to calculate squares
+squares = list(map(lambda x: x * x, numbers))
+
+# Display result
+print("Original List:", numbers)
+print("Squares:", squares)
+
+
+# Accept string
+s = input("Enter a string: ")
+
+# Split into words
+words = s.split()
+
+# Find words without vowels
+result = [w for w in words if not any(ch.lower() in "aeiou" for ch in w)]
+
+# Sort words
+result.sort()
+
+# Display results
+print("Words without vowels:", result)
+print("Count:", len(result))
