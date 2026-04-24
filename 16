@@ -1,0 +1,45 @@
+import re
+
+# Accept input
+word = input("Enter a word: ")
+
+# Pattern for words like bit, but, bat, hit, hut, hat
+pattern = r'^[bh]it$|^[bh]ut$|^[bh]at$'
+
+if re.match(pattern, word):
+    print("Valid pattern word")
+else:
+    print("Invalid word")
+
+
+
+    import pandas as pd
+import numpy as np
+
+# Create DataFrame
+df = pd.DataFrame({
+    "Player": ["Hardik Pandya", "K L Rahul", "Andre Russel", "Jasprit Bumrah", "Virat Kohli", "Rohit Sharma"],
+    "Team": ["Mumbai Indians", "Kings Eleven", "Kolkata Knight Riders", "Mumbai Indians", "RCB", "Mumbai Indians"],
+    "Category": ["Batsman", "Batsman", "Batsman", "Bowler", "Batsman", "Batsman"],
+    "BidPrice": [13, 12, 7, 10, 17, 15],
+    "Runs": [1000, 2400, 900, 200, 3600, 3700]
+})
+
+print("Original DataFrame:\n", df)
+
+# a) First 2 rows
+print("\nFirst 2 rows:\n", df.head(2))
+
+# b) Last 3 rows
+print("\nLast 3 rows:\n", df.tail(3))
+
+# c) Add null values
+df.loc[2, "BidPrice"] = np.nan
+df.loc[4, "Runs"] = np.nan
+print("\nAfter adding null values:\n", df)
+
+# d) Most expensive player
+print("\nMost expensive player:\n", df.loc[df["BidPrice"].idxmax()])
+
+# e) Total players per team
+print("\nPlayers per team:\n", df["Team"].value_counts())
