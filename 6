@@ -1,0 +1,47 @@
+try:
+    a = input("Enter first number: ")
+    b = input("Enter second number: ")
+
+    # Check if inputs are numeric
+    if not (a.isdigit() and b.isdigit()):
+        raise TypeError("Inputs must be numerical values")
+
+    a = int(a)
+    b = int(b)
+
+    print("Sum =", a + b)
+
+except TypeError as e:
+    print("Error:", e)
+
+
+    
+
+    import pandas as pd
+
+# Create DataFrame
+data = pd.DataFrame({
+    "Label": ["Pencil", "Pencil", "Pen", "Pen", "Eraser"],
+    "Company": ["Apsara", "Natraj", "Cello", "Parkar", "Apsara"],
+    "Count": [15, 20, 25, 35, 20],
+    "Price": [250, 200, 600, 900, 300]
+})
+
+print("Original DataFrame:\n", data)
+
+# a) Rows with label "Pencil"
+print("\nPencil rows:\n", data[data["Label"] == "Pencil"])
+
+# b) Change Eraser count to 25
+data.loc[data["Label"] == "Eraser", "Count"] = 25
+
+# c) Only Company and Price
+print("\nCompany & Price:\n", data[["Company", "Price"]])
+
+# d) Rows with labels Pencil and Pen
+print("\nPencil & Pen rows:\n", data[data["Label"].isin(["Pencil", "Pen"])])
+
+# e) Delete column Count
+data.drop("Count", axis=1, inplace=True)
+
+print("\nFinal DataFrame:\n", data)
